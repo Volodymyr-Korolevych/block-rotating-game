@@ -1,7 +1,7 @@
 export type PositionType = [number, number]
 
 export enum BlocksEnum {
-  regular = 'regular',
+  regular = 'gray',
   red = 'red',
   blue = 'blue',
   green = 'green',

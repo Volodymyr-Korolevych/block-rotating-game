@@ -105,7 +105,7 @@ export default class boxCircle extends Vue {
       this.blocks[9] === BlocksEnum.blue
     )
       this.$nextTick(() => {
-        this.$emit('Destroy', true)
+        this.$emit('Destroy', true) // true for WIN! 
       })
   }
 }

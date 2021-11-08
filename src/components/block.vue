@@ -9,7 +9,15 @@
     @click="rotate()"
   >
     <div class="img__inner" :class="{ img__hover: isHovering }">
-      <img :src="imgSrc" />
+      <svg viewBox="1 1 8 8">
+        <defs>
+          <radialGradient :id="`my${ind}`">
+            <stop offset="10%" stop-color="white" />
+            <stop offset="95%" :stop-color="blType" />
+          </radialGradient>
+        </defs>
+        <circle cx="5" cy="5" r="4" :fill="`url('#my${ind}')`" />
+      </svg>
     </div>
   </div>
 </template>
@@ -49,10 +57,6 @@ export default class Block extends Vue {
       (+position[1] - this.offset[1]).toString() +
       'rem;'
     )
-  }
-
-  get imgSrc(): string {
-    return blockImages[this.blType]
   }
 
   registerBlock(): void {
