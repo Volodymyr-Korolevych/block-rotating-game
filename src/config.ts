@@ -7,13 +7,6 @@ export enum BlocksEnum {
   green = 'green',
 }
 
-export const blockImages: Record<BlocksEnum, string> = {
-  [BlocksEnum.regular]: require('./assets/img/block-regular.png'),
-  [BlocksEnum.red]: require('./assets/img/block-red.png'),
-  [BlocksEnum.blue]: require('./assets/img/block-blue.png'),
-  [BlocksEnum.green]: require('./assets/img/block-green.png'),
-}
-
 export enum CorrectEnum {
   red = '1',
   blue = '9',

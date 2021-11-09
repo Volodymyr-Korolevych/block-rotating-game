@@ -22,12 +22,7 @@
   </div>
 </template>
 <script lang="ts">
-import {
-  BlocksEnum,
-  blockPositions,
-  blockImages,
-  PositionType,
-} from '../config'
+import { BlocksEnum, blockPositions, PositionType } from '../config'
 import { Component, Prop, Vue } from 'vue-property-decorator'
 @Component
 export default class Block extends Vue {
