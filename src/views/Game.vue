@@ -1,8 +1,9 @@
 <template>
   <div id="game">
     <div id="controls">
-      <button @click="newGame()" v-if="wonCondition">
-        Розпочати нову гру
+      <button id="butt" @click="newGame()" v-if="wonCondition">
+        <span id="you-won"> Вітаємо! Ви виграли</span>
+        <span id="new-game">Розпочати нову гру</span>
       </button>
     </div>
     <div id="block-container" :key="toReRender">
@@ -91,7 +92,7 @@ export default class Game extends Vue {
     if (won) {
       this.wonCondition = true
       console.log('Game Over')
-      alert('You won! Congratulations')
+      // alert('You won! Congratulations')
     }
   }
 
@@ -105,20 +106,46 @@ export default class Game extends Vue {
 <style>
 #app {
   position: absolute;
-  background-image: url(../assets/img/box.jpg);
   width: 100%;
-  height: 115%;
-  margin-top: -100px;
-  background-size: 87%;
+  height: 100%;
 }
 #controls {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  cursor: pointer;
+	position: fixed;
+	top: 15rem;
+	left: 13rem;
+	cursor: pointer;
+	z-index: 20;
+	background: transparent;
+}
+#butt {
+	background: transparent;
+	border: none;
+}
+#you-won {
+  display: block;
+  background: white;
+  padding: 20px;
+  font-size: 30px;
+  opacity: .8;
+}
+#new-game {
+	display: block;
+	margin-top: 18rem;
+	background: white;
+	padding: 5px;
+	width: 147px;
+	position: relative;
+	margin-left: 85px;
+}
+#game {
+  position: absolute;
+  background: url(../assets/img/back2.png) no-repeat;
+  width: 50rem;
+  height: 50rem;
 }
 #block-container {
   position: absolute;
-  margin-top: 122px;
+  margin-top: 6.5rem;
+  margin-left: -12.7rem;
 }
 </style>
